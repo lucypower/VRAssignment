@@ -727,3 +727,39 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1092.983054 seconds.
+  path: Assets
+  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '643dbe22ecb75e7bba7c4df53f6b1cbf') in 0.016674 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.304653 seconds.
+  path: Assets/Prefabs.mat
+  artifactKey: Guid(7dc14f8a31f69a44dae4076547c6dbc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs.mat using Guid(7dc14f8a31f69a44dae4076547c6dbc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51a252ef330da2a6021d461a96e7f175') in 0.198618 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.627554 seconds.
+  path: Assets/Prefabs
+  artifactKey: Guid(802a29d9ebaad794b8bd9765d32dde14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs using Guid(802a29d9ebaad794b8bd9765d32dde14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f5653c5624de92df7d2bf1549023be9') in 0.002822 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.035207 seconds.
+  path: Assets/Prefabs/XR Origin.prefab
+  artifactKey: Guid(bb9226a52c6efc4489c37eef8e8439e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/XR Origin.prefab using Guid(bb9226a52c6efc4489c37eef8e8439e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34e2a3540f7684ce338209338f330566') in 0.029104 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 425.472302 seconds.
+  path: Assets/Materials
+  artifactKey: Guid(7be839f377709ef4ca5d34873a3aae6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials using Guid(7be839f377709ef4ca5d34873a3aae6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61e603987ac14824ca24833cf18ac58e') in 0.006415 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.832751 seconds.
+  path: Assets/Materials/Default.mat
+  artifactKey: Guid(4434c80893d617743a39d6ffdc05efea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Default.mat using Guid(4434c80893d617743a39d6ffdc05efea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '089eca6368a2898a122759f1e8fa3bdd') in 0.019861 seconds 
