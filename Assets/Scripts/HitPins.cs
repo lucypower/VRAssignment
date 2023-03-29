@@ -16,7 +16,7 @@ public class HitPins : MonoBehaviour
 
     IEnumerator DestroyPin(float waitTime, GameObject pin)
     {
-        yield return new WaitForSeconds(waitTime);
         pin.SetActive(false);
+        yield return new WaitForSeconds(waitTime);
     }
 }
