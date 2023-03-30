@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PinCount : MonoBehaviour
-{
-    //put on trigger at the back for when the ball goes through it?
-    
+{    
     public GameObject[] m_activePins;
 
-    private void CountPins()
+    public int CountPins()
     {
         m_activePins = GameObject.FindGameObjectsWithTag("Pin");
         Debug.Log(m_activePins.Length);
+
+        return m_activePins.Length;
     }
 
     private void OnTriggerEnter(Collider other)
