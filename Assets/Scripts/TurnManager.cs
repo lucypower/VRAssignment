@@ -36,7 +36,7 @@ public class TurnManager : MonoBehaviour
             {
                 m_gameManager.m_isFirstBowl = true;
 
-                Destroy(m_pinSpawned);
+                Destroy(m_pinSpawned, 1.5f);
 
                 Invoke(nameof(SpawnPins), 2.0f);
             }

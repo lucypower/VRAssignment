@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7155671498085349188}
   - component: {fileID: 7155671498085349211}
   - component: {fileID: 7155671498085349210}
+  - component: {fileID: -3095955702524227740}
+  - component: {fileID: -5043101934391394846}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -228,9 +230,35 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 0.25
-  m_ForceGravityOnDetach: 0
+  m_ForceGravityOnDetach: 1
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &-3095955702524227740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7155671498085349208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37bc7ae5a508bc846be405e87b6a7853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-5043101934391394846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7155671498085349208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f2af29ec2258e4f88604f2ad467169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SocketType: Orb
+  DisableSocketOnSocketed: 0
 --- !u!1 &7155671499017591507
 GameObject:
   m_ObjectHideFlags: 0

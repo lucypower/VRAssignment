@@ -53,6 +53,7 @@ public class RemoveHitPins : MonoBehaviour
             {
                 if (m_pins[i].m_isKnockedOver)
                 {
+                    m_scoreSystem.m_score++;
                     Destroy(m_pins[i].gameObject);
                     m_bowling = true;
                     Invoke(nameof(CountPins), 0.5f);

@@ -10,6 +10,8 @@ public class ScoreSystem : MonoBehaviour
     [SerializeField] private TMP_Text m_text;
 
     public int m_score;
+    private int m_pinsStillUp;
+    private int m_pinsStillUp1;
     private int m_pinsKnockedDown;
 
 
@@ -24,19 +26,29 @@ public class ScoreSystem : MonoBehaviour
         m_text.text = "Score : " + m_score;
     }
 
+    public void PinsUp()
+    {
+        m_pinsStillUp = m_pins.CountPins();
+    }
+
     public void CalculateScore()
     {
-        int pinsStillUp = m_pins.CountPins();
-
-        if (m_gameManager.m_isFirstBowl)
+        if (!m_gameManager.m_isFirstBowl)
         {
-            m_pinsKnockedDown = 10 - pinsStillUp;
+            PinsUp();
+
+            m_pinsKnockedDown = 10 - m_pinsStillUp;
+            m_pinsStillUp1 = m_pinsStillUp;
 
             m_score += m_pinsKnockedDown;
         }
         else
         {
-            m_pinsKnockedDown -= pinsStillUp;
+            PinsUp();
+
+            m_pinsStillUp = m_pinsStillUp1 - m_pinsStillUp;
+
+            m_pinsKnockedDown -= m_pinsStillUp;
 
             m_score += m_pinsKnockedDown;
         }
@@ -44,9 +56,9 @@ public class ScoreSystem : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Ball"))
-        {
-            Invoke(nameof(CalculateScore), 1.0f);
-        }
+        //if (other.CompareTag("Ball"))
+        //{
+        //    Invoke(nameof(CalculateScore), 1.0f);
+        //}
     }
 }
