@@ -22,22 +22,40 @@ public class RemoveHitPins : MonoBehaviour
 
             m_scoreSystem = GetComponent<ScoreSystem>();
             m_pinCount = GetComponent<PinCount>();
-            m_pins = GameObject.Find("Pins").GetComponentsInChildren<Pins>();
+
+            m_pins = GameObject.Find("Pins(Clone)").GetComponentsInChildren<Pins>();
         }
     }
 
+    public int CountPins()
+    {
+        m_activePins = GameObject.FindGameObjectsWithTag("Pin");
+        Debug.Log(m_activePins.Length);
+
+        return m_activePins.Length;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Ball"))
+        {
+            CountPins();
+        }
+    }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Ball"))
         {
+            CountPins();
+
             for (int i = 0; i < m_pins.Length; i++)
             {
                 if (m_pins[i].m_isKnockedOver)
                 {
                     Destroy(m_pins[i].gameObject);
                     m_bowling = true;
-                    Invoke(nameof(m_pinCount.CountPins), 0.5f);
+                    Invoke(nameof(CountPins), 0.5f);
                 }
             }
         }

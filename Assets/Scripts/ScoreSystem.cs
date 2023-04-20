@@ -5,7 +5,7 @@ using TMPro;
 
 public class ScoreSystem : MonoBehaviour
 {
-    PinCount m_pinCount;
+    RemoveHitPins m_pins;
     GameManager m_gameManager;
     [SerializeField] private TMP_Text m_text;
 
@@ -16,7 +16,7 @@ public class ScoreSystem : MonoBehaviour
     private void Awake()
     {
         m_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        m_pinCount = GetComponent<PinCount>();
+        m_pins = GetComponent<RemoveHitPins>();
     }
 
     private void Update()
@@ -26,7 +26,7 @@ public class ScoreSystem : MonoBehaviour
 
     public void CalculateScore()
     {
-        int pinsStillUp = m_pinCount.CountPins();
+        int pinsStillUp = m_pins.CountPins();
 
         if (m_gameManager.m_isFirstBowl)
         {
@@ -46,7 +46,7 @@ public class ScoreSystem : MonoBehaviour
     {
         if (other.CompareTag("Ball"))
         {
-            CalculateScore();
+            Invoke(nameof(CalculateScore), 1.0f);
         }
     }
 }
