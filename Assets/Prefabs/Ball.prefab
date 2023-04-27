@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7155671498085349210}
   - component: {fileID: -3095955702524227740}
   - component: {fileID: -5043101934391394846}
+  - component: {fileID: 4293941287745478293}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -259,6 +260,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SocketType: Orb
   DisableSocketOnSocketed: 0
+--- !u!114 &4293941287745478293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7155671498085349208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b176e0d4d4c30b543ac0ed45695f29f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7155671499017591507
 GameObject:
   m_ObjectHideFlags: 0

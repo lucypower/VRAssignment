@@ -59,6 +59,8 @@ public class RemoveHitPins : MonoBehaviour
                     Invoke(nameof(CountPins), 0.5f);
                 }
             }
+
+            Destroy(other.gameObject);
         }
     }
 
