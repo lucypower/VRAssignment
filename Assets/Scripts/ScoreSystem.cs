@@ -31,28 +31,28 @@ public class ScoreSystem : MonoBehaviour
         m_pinsStillUp = m_pins.CountPins();
     }
 
-    public void CalculateScore()
-    {
-        if (!m_gameManager.m_isFirstBowl)
-        {
-            PinsUp();
+    //public void CalculateScore()
+    //{
+    //    if (!m_gameManager.m_isFirstBowl)
+    //    {
+    //        PinsUp();
 
-            m_pinsKnockedDown = 10 - m_pinsStillUp;
-            m_pinsStillUp1 = m_pinsStillUp;
+    //        m_pinsKnockedDown = 10 - m_pinsStillUp;
+    //        m_pinsStillUp1 = m_pinsStillUp;
 
-            m_score += m_pinsKnockedDown;
-        }
-        else
-        {
-            PinsUp();
+    //        m_score += m_pinsKnockedDown;
+    //    }
+    //    else
+    //    {
+    //        PinsUp();
 
-            m_pinsStillUp = m_pinsStillUp1 - m_pinsStillUp;
+    //        m_pinsStillUp = m_pinsStillUp1 - m_pinsStillUp;
 
-            m_pinsKnockedDown -= m_pinsStillUp;
+    //        m_pinsKnockedDown -= m_pinsStillUp;
 
-            m_score += m_pinsKnockedDown;
-        }
-    }
+    //        m_score += m_pinsKnockedDown;
+    //    }
+    //}
 
     private void OnTriggerExit(Collider other)
     {

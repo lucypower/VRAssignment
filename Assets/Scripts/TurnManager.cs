@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TurnManager : MonoBehaviour
 {
@@ -9,13 +10,21 @@ public class TurnManager : MonoBehaviour
 
     [SerializeField] private GameObject m_pins;
     [SerializeField] private Transform m_pinsSpawn;
-
+    [SerializeField] private TMP_Text m_text;
     [SerializeField] private GameObject m_pinSpawned;
+
+    public int m_round;
 
     private void Awake()
     {
         m_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         SpawnPins();
+        m_round = 1;
+    }
+
+    private void Update()
+    {
+        m_text.text = "Round : " + m_round;
     }
 
     public void SpawnPins()
@@ -39,6 +48,8 @@ public class TurnManager : MonoBehaviour
                 Destroy(m_pinSpawned, 1.5f);
 
                 Invoke(nameof(SpawnPins), 2.0f);
+
+                m_round++;
             }
         }
     }

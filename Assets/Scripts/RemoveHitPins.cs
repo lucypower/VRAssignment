@@ -23,7 +23,7 @@ public class RemoveHitPins : MonoBehaviour
             m_scoreSystem = GetComponent<ScoreSystem>();
             m_pinCount = GetComponent<PinCount>();
 
-            m_pins = GameObject.Find("Pins(Clone)").GetComponentsInChildren<Pins>();
+            
         }
     }
 
@@ -31,6 +31,8 @@ public class RemoveHitPins : MonoBehaviour
     {
         m_activePins = GameObject.FindGameObjectsWithTag("Pin");
         Debug.Log(m_activePins.Length);
+
+        m_pins = GameObject.Find("Pins(Clone)").GetComponentsInChildren<Pins>();
 
         return m_activePins.Length;
     }
