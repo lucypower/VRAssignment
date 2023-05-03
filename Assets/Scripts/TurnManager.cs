@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class TurnManager : MonoBehaviour
 {
@@ -17,13 +18,13 @@ public class TurnManager : MonoBehaviour
 
     private void Awake()
     {
-        m_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        SpawnPins();
-        m_round = 1;
+        m_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();        
     }
 
-    private void Update()
+    public void StartGame()
     {
+        SpawnPins();
+        m_round = 1;
         m_text.text = "Round : " + m_round;
     }
 
@@ -31,6 +32,13 @@ public class TurnManager : MonoBehaviour
     {
         m_pinSpawned = Instantiate(m_pins, m_pinsSpawn.transform.position, Quaternion.identity);
         m_pinsActive = GameObject.Find("Pins(Clone)").GetComponentsInChildren<Pins>();
+    }
+
+    private void EndGame()
+    {
+        Destroy(m_pinSpawned, 1.5f);
+        m_text.text = "Game Over!";
+        m_gameManager.m_gameStarted = false;
     }
 
     private void OnTriggerExit(Collider other)
@@ -41,7 +49,7 @@ public class TurnManager : MonoBehaviour
             {
                 m_gameManager.m_isFirstBowl = false;
             }
-            else
+            else if (!m_gameManager.m_isFirstBowl && m_round < 10)
             {
                 m_gameManager.m_isFirstBowl = true;
 
@@ -50,6 +58,11 @@ public class TurnManager : MonoBehaviour
                 Invoke(nameof(SpawnPins), 2.0f);
 
                 m_round++;
+                m_text.text = "Round : " + m_round;
+            }
+            else
+            {
+                EndGame();
             }
         }
     }

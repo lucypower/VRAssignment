@@ -23,7 +23,7 @@ public class ScoreSystem : MonoBehaviour
 
     private void Update()
     {
-        m_text.text = "Score : " + m_score;
+        
     }
 
     public void PinsUp()
@@ -56,9 +56,6 @@ public class ScoreSystem : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        //if (other.CompareTag("Ball"))
-        //{
-        //    Invoke(nameof(CalculateScore), 1.0f);
-        //}
+        m_text.text = "Score : " + m_score;
     }
 }
