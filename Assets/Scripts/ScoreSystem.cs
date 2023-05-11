@@ -54,8 +54,13 @@ public class ScoreSystem : MonoBehaviour
     //    }
     //}
 
-    private void OnTriggerExit(Collider other)
+    public void UpdateScore()
     {
         m_text.text = "Score : " + m_score;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        UpdateScore();
     }
 }

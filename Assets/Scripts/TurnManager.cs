@@ -9,6 +9,7 @@ public class TurnManager : MonoBehaviour
     GameManager m_gameManager;
     Pins[] m_pinsActive;
     ScoreSystem m_scoreSystem;
+    RespawnBalls m_respawnBalls;
 
     [SerializeField] private GameObject m_pins;
     [SerializeField] private Transform m_pinsSpawn;
@@ -21,14 +22,20 @@ public class TurnManager : MonoBehaviour
     {
         m_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         m_scoreSystem = GetComponent<ScoreSystem>();
+        m_respawnBalls = GetComponent<RespawnBalls>();
     }
 
     public void StartGame()
     {
         SpawnPins();
+
         m_round = 1;
         m_text.text = "Round : " + m_round;
+
         m_scoreSystem.m_score = 0;
+        m_scoreSystem.UpdateScore();
+        
+        //m_respawnBalls.SpawnBalls();
     }
 
     public void SpawnPins()

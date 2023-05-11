@@ -21,6 +21,7 @@ public class BumperButton : MonoBehaviour
         if (!m_gameManager.m_gameStarted)
         {
             m_gameManager.m_gameStarted = true;
+            m_gameManager.m_isFirstBowl = true;
             m_turnManager.StartGame();
         }
         else
